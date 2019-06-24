@@ -3,32 +3,28 @@ package com.asp.weatherapp.features.temperature.network
 import com.google.gson.annotations.SerializedName
 
 data class Info(
-    @SerializedName("name") var name: String? = "",
-    @SerializedName("founder") var founder: String? = "",
-    @SerializedName("founded") var founded: Int? = 0,
-    @SerializedName("employees") var employees: Int? = 0,
-    @SerializedName("vehicles") var vehicles: Int? = 0,
-    @SerializedName("launch_sites") var launchSites: Int? = 0,
-    @SerializedName("test_sites") var testSites: Int? = 0,
-    @SerializedName("ceo") var ceo: String? = "",
-    @SerializedName("cto") var cto: String? = "",
-    @SerializedName("coo") var coo: String? = "",
-    @SerializedName("cto_propulsion") var ctoPropulsion: String? = "",
-    @SerializedName("valuation") var valuation: Long? = 0L,
-    @SerializedName("summary") var summary: String? = "",
-    @SerializedName("headquarters") var headquarters: Headquarters? = Headquarters(),
-    @SerializedName("links") var links: Links? = Links()
+    @SerializedName("location") val location: Location? = Location(),
+    @SerializedName("current") val current: Current? = Current(),
+    @SerializedName("forecast") val forecast: Forecast? = Forecast()
 ) {
-    data class Headquarters(
-        @SerializedName("address") var address: String? = "",
-        @SerializedName("city") var city: String? = "",
-        @SerializedName("state") var state: String? = ""
+    data class Location(
+        @SerializedName("name") val name: String? = ""
     )
 
-    data class Links(
-        @SerializedName("elon_twitter") var elonTwitter: String? = "",
-        @SerializedName("flickr") var flickr: String? = "",
-        @SerializedName("twitter") var twitter: String? = "",
-        @SerializedName("website") var website: String? = ""
+    data class Current(
+        @SerializedName("temp_c") val temp_c: String? = ""
     )
+
+    data class Forecast(
+        @SerializedName("forecastday") val forecastday: List<ForecastDay> = ArrayList()
+    ){
+        data class ForecastDay(
+            @SerializedName("date_epoch") var date_epoch: Long = 0,
+            @SerializedName("day") val day: Day? = Day()
+        ) {
+            data class Day(
+                @SerializedName("avgtemp_c") val name: String? = ""
+            )
+        }
+    }
 }

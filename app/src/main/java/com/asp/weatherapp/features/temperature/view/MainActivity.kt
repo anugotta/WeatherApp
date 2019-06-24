@@ -1,6 +1,8 @@
 package com.asp.weatherapp.features.temperature.view
 
 import android.os.Bundle
+import android.util.Log
+import androidx.lifecycle.Observer
 import com.asp.weatherapp.R
 import com.asp.weatherapp.base.BaseActivity
 
@@ -12,6 +14,16 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        getViewModel().info.observe(this, Observer {
+            Log.e("XXXY", it.location!!.name)
+        })
+
+
+        getViewModel().viewState.observe(this, Observer {
+            Log.e("XXXC", it.isError.toString())
+        })
+
         getViewModel().getInfo()
 
     }
