@@ -1,7 +1,8 @@
-package com.asp.weatherapp
+package com.asp.weatherapp.features.temperature.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.asp.weatherapp.R
 
 class MainActivity : AppCompatActivity() {
 

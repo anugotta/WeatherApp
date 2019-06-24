@@ -68,4 +68,10 @@ dependencies {
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     implementation 'android.arch.lifecycle:reactivestreams:1.1.1'
     kapt "android.arch.lifecycle:compiler:1.1.1"
+
+    // RxJava
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.0.3'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
 }
