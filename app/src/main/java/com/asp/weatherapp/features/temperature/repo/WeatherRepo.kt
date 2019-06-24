@@ -6,6 +6,7 @@ import com.asp.weatherapp.features.temperature.network.Info
 import com.asp.weatherapp.preferences.WeatherPreferences
 import com.asp.weatherapp.utils.AndroidDisposable
 import com.asp.weatherapp.utils.AppRxSchedulers
+import com.asp.weatherapp.utils.Constants.Companion.WEATHER_API_KEY
 import io.reactivex.Single
 import javax.inject.Singleton
 
@@ -24,10 +25,9 @@ class WeatherRepo(
 
 
     fun getInfo(): Single<Info> {
-        return api.getInfo()
+        return api.getForecast(WEATHER_API_KEY,"Bangalore", "5")
             .subscribeOn(rxSchedulers.io())
             .observeOn(rxSchedulers.androidThread())
-           // .map(this@WeatherRepo::saveToRealm)
     }
 
 

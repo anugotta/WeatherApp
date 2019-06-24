@@ -4,6 +4,7 @@ import android.content.Context
 import com.asp.weatherapp.BuildConfig
 import com.asp.weatherapp.api.ApiInterface
 import com.asp.weatherapp.utils.AppRxSchedulers
+import com.asp.weatherapp.utils.Constants.Companion.BASE_URL
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -71,7 +72,7 @@ class ApiModule {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .baseUrl("www.google.com") // BuildConfig.SERVER_URL
+            .baseUrl(BASE_URL)
             .client(okHttpClient)
             .build()
     }
