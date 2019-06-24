@@ -1,6 +1,5 @@
 package com.asp.weatherapp.features.temperature.view
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -32,9 +31,7 @@ class MainViewModel @Inject constructor(var infoRepo: WeatherRepo) : ViewModel()
             infoRepo.getInfo()
                 .subscribe(
                     {
-
                         _infoLD.value = it
-
                         _viewState.value?.let {
                             val newState =
                                 this.viewState.value?.copy(isLoading = false, isError = false, showData = true)
@@ -42,7 +39,6 @@ class MainViewModel @Inject constructor(var infoRepo: WeatherRepo) : ViewModel()
                         }
                     },
                     {
-                        Log.e("XXXXBB",it.message)
                         _viewState.value = viewState.value?.copy(isLoading = false, isError = true, showData = false)
                     }
                 )

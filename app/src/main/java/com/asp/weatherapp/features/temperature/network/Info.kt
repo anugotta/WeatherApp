@@ -23,7 +23,7 @@ data class Info(
             @SerializedName("day") val day: Day? = Day()
         ) {
             data class Day(
-                @SerializedName("avgtemp_c") val name: String? = ""
+                @SerializedName("avgtemp_c") val avgtemp_c: String? = ""
             )
         }
     }
