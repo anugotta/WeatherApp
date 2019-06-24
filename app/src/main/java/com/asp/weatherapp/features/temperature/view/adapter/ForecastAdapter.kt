@@ -22,9 +22,8 @@ class ForecastAdapter(private val forecastList : List<Info.Forecast.ForecastDay>
     override fun onBindViewHolder(holder: ForecastViewHolder, position: Int) {
 
         val item = forecastList[position]
-
         holder.tvDayTitle.text = convertEpochToDay(item.date_epoch.toString())
-        holder.tvTemperature.text = "${item.day!!.avgtemp_c} C"
+        holder.tvTemperature.text = "${item.day!!.avgtemp_c!!.substringBefore(".")} C"
 
     }
 

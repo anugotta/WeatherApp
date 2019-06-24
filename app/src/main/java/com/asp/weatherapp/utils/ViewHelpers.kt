@@ -14,7 +14,7 @@ fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = false):
 
 fun convertEpochToDay(epoch : String): String {
     val c = Calendar.getInstance()
-    c.timeInMillis = epoch.toLong()
+    c.timeInMillis = epoch.toLong()*1000
     return  when(c.get(Calendar.DAY_OF_WEEK)){
       1 -> "Sunday"
       2 -> "Monday"

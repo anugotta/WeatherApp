@@ -40,7 +40,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
 
     private fun populateUI(info: Info) {
-        tvCurrentTemp.text = info.current!!.temp_c
+        tvCurrentTemp.text = "${info.current!!.temp_c!!.substringBefore(".")}\u00B0"
         tvCurrentLocation.text = info.location!!.name
         setRecyclerView(info.forecast!!.forecastday)
     }
@@ -48,7 +48,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
     private fun setRecyclerView(forecastDayList: List<Info.Forecast.ForecastDay>) {
         linearLayoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL,false)
-        forecastAdapter = ForecastAdapter(forecastDayList)
+        forecastAdapter = ForecastAdapter(forecastDayList.subList(1,5))
         rvForecast.layoutManager=linearLayoutManager
         rvForecast.adapter = forecastAdapter
     }
