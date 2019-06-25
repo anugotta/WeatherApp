@@ -1,10 +1,16 @@
 package com.asp.weatherapp.utils
 
+import android.app.Dialog
+import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.view.animation.TranslateAnimation
 import androidx.annotation.LayoutRes
+import com.asp.weatherapp.R
 import java.util.*
 
 
@@ -42,3 +48,17 @@ fun View.slideUp() {
     animate.fillAfter = true
     this.startAnimation(animate)
 }
+
+
+fun Context.showSessionExpiredDialog(): Dialog {
+    val dialog = Dialog(this,R.style.ProgressDialog)
+    dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+    dialog.setCancelable(false)
+    dialog.setCanceledOnTouchOutside(false)
+    dialog.setContentView(R.layout.layout_progress_fullscreen)
+    return dialog
+}
+
+
+
