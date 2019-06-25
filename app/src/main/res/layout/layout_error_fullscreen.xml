@@ -6,7 +6,7 @@
         android:layout_height="match_parent">
 
     <View
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/bgErrorState"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -20,13 +20,13 @@
             android:textColor="@color/white"
             android:fontFamily="@font/roboto_thin"
             android:text="@string/something_went_wrong_at_our_end"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginLeft="44dp"
-            android:layout_marginStart="44dp" android:layout_marginRight="44dp" android:layout_marginEnd="44dp"
+            app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/textView"
-            app:layout_constraintBottom_toBottomOf="@+id/view" app:layout_constraintVertical_bias="0.42000002"/>
+            app:layout_constraintBottom_toBottomOf="@+id/view" app:layout_constraintVertical_bias="0.41000003"
+    />
 
 
     <Button android:id="@+id/btnRetry"
