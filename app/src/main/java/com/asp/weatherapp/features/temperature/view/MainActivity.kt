@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.asp.weatherapp.R
 import com.asp.weatherapp.base.BaseActivity
-import com.asp.weatherapp.features.temperature.network.Info
+import com.asp.weatherapp.features.temperature.data.Info
 import com.asp.weatherapp.features.temperature.view.adapter.ForecastAdapter
 import com.asp.weatherapp.utils.showErrorScreen
 import com.asp.weatherapp.utils.showProgressScreen

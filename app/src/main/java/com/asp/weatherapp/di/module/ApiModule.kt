@@ -35,7 +35,6 @@ class ApiModule {
     fun provideAPI(retrofit: Retrofit): ApiInterface = retrofit.create(ApiInterface::class.java)
 
 
-
     @Provides
     @Singleton
     fun provideRetrofit(
@@ -47,9 +46,10 @@ class ApiModule {
 
         val okHttpClient: OkHttpClient
         if (BuildConfig.DEBUG) {
-             okHttpClient = OkHttpClient()
+            okHttpClient = OkHttpClient()
                 .newBuilder()
-                .cache(cache)
+                .cache(null) // Cache disabled for testing no internet condition
+               // .cache(cache)
                 .connectTimeout(78000, TimeUnit.MILLISECONDS)
                 .readTimeout(78000, TimeUnit.MILLISECONDS)
                 .retryOnConnectionFailure(true)
@@ -60,7 +60,8 @@ class ApiModule {
         } else {
             okHttpClient = OkHttpClient()
                 .newBuilder()
-                .cache(cache)
+                .cache(null)  // Cache disabled for testing no internet condition
+               // .cache(cache)
                 .connectTimeout(78000, TimeUnit.MILLISECONDS)
                 .readTimeout(78000, TimeUnit.MILLISECONDS)
                 .retryOnConnectionFailure(true)

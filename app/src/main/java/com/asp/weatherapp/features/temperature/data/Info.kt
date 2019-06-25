@@ -1,4 +1,4 @@
-package com.asp.weatherapp.features.temperature.network
+package com.asp.weatherapp.features.temperature.data
 
 import com.google.gson.annotations.SerializedName
 

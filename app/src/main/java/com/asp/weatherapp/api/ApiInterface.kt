@@ -1,6 +1,6 @@
 package com.asp.weatherapp.api
 
-import com.asp.weatherapp.features.temperature.network.Info
+import com.asp.weatherapp.features.temperature.data.Info
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

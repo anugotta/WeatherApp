@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.asp.weatherapp.R
-import com.asp.weatherapp.features.temperature.network.Info
+import com.asp.weatherapp.features.temperature.data.Info
 import com.asp.weatherapp.utils.convertEpochToDay
 import com.asp.weatherapp.utils.inflate
 

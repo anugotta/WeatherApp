@@ -2,7 +2,7 @@ package com.asp.weatherapp.features.temperature.repo
 
 import android.location.Location
 import com.asp.weatherapp.api.ApiInterface
-import com.asp.weatherapp.features.temperature.network.Info
+import com.asp.weatherapp.features.temperature.data.Info
 import com.asp.weatherapp.preferences.WeatherPreferences
 import com.asp.weatherapp.utils.AppRxSchedulers
 import com.asp.weatherapp.utils.Constants.Companion.WEATHER_API_KEY

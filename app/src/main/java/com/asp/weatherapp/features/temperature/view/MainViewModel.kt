@@ -4,7 +4,7 @@ import android.location.Location
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.asp.weatherapp.features.temperature.network.Info
+import com.asp.weatherapp.features.temperature.data.Info
 import com.asp.weatherapp.features.temperature.repo.WeatherRepo
 import com.asp.weatherapp.utils.AndroidDisposable
 import javax.inject.Inject
