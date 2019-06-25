@@ -26,6 +26,10 @@ class MainViewModel @Inject constructor(var infoRepo: WeatherRepo) : ViewModel()
         _viewState.value = InfoViewState(isLoading = true)
     }
 
+    fun setLoadingState(){
+        _viewState.value = InfoViewState(isLoading = true)
+    }
+
     fun getInfo() {
         disposable.add(
             infoRepo.getInfo()

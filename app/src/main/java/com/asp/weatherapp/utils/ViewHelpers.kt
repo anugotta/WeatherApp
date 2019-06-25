@@ -50,7 +50,7 @@ fun View.slideUp() {
 }
 
 
-fun Context.showSessionExpiredDialog(): Dialog {
+fun Context.showProgressScreen(): Dialog {
     val dialog = Dialog(this,R.style.ProgressDialog)
     dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -61,4 +61,12 @@ fun Context.showSessionExpiredDialog(): Dialog {
 }
 
 
-
+fun Context.showErrorScreen(): Dialog {
+    val dialog = Dialog(this,R.style.ProgressDialog)
+    dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+    dialog.setCancelable(false)
+    dialog.setCanceledOnTouchOutside(false)
+    dialog.setContentView(R.layout.layout_error_fullscreen)
+    return dialog
+}
