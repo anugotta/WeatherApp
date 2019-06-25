@@ -2,6 +2,7 @@ package com.asp.weatherapp.features.temperature.view
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -9,6 +10,7 @@ import com.asp.weatherapp.R
 import com.asp.weatherapp.base.BaseActivity
 import com.asp.weatherapp.features.temperature.network.Info
 import com.asp.weatherapp.features.temperature.view.adapter.ForecastAdapter
+import com.asp.weatherapp.utils.slideUp
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity<MainViewModel>() {
@@ -24,10 +26,11 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
         setContentView(provideLayout())
 
+        initUI()
+
         getViewModel().info.observe(this, Observer {
            populateUI(it)
         })
-
 
         getViewModel().viewState.observe(this, Observer {
             Log.e("XXXC", it.isError.toString())
@@ -37,6 +40,9 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
     }
 
+    private fun initUI() {
+      rvForecast.visibility = View.INVISIBLE
+    }
 
 
     private fun populateUI(info: Info) {
@@ -51,5 +57,6 @@ class MainActivity : BaseActivity<MainViewModel>() {
         forecastAdapter = ForecastAdapter(forecastDayList.subList(1,5))
         rvForecast.layoutManager=linearLayoutManager
         rvForecast.adapter = forecastAdapter
+        rvForecast.slideUp()
     }
 }
