@@ -70,3 +70,5 @@ fun Context.showErrorScreen(): Dialog {
     dialog.setContentView(R.layout.layout_error_fullscreen)
     return dialog
 }
+
+

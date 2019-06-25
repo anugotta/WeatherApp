@@ -1,5 +1,6 @@
 package com.asp.weatherapp.features.temperature.view
 
+import android.location.Location
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -30,9 +31,9 @@ class MainViewModel @Inject constructor(var infoRepo: WeatherRepo) : ViewModel()
         _viewState.value = InfoViewState(isLoading = true)
     }
 
-    fun getInfo() {
+    fun getInfo(location: Location) {
         disposable.add(
-            infoRepo.getInfo()
+            infoRepo.getInfo(location)
                 .subscribe(
                     {
                         _infoLD.value = it
