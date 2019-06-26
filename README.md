@@ -23,6 +23,7 @@
 * Min SDK 16
 * Caching removed from Okhttp3 for testing network error situations
 * Only Git -commits done. No Git -push
+* Approx hours taken to complete project ~10-12 hours 
 
 ##Author
 * Anu S Pillai
