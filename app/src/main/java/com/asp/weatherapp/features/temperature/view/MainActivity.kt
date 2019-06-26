@@ -102,7 +102,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
         errorDialog = this.showErrorScreen()
         errorDialog.findViewById<Button>(R.id.btnRetry).setOnClickListener {
             tempLocation?.let {
-                getViewModel().getInfo(it)
+                getViewModel().getInfo(it.latitude.toString(), it.longitude.toString())
             }
 
             getViewModel().setLoadingState()
@@ -150,7 +150,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
                 tempLocation = location
 
-                getViewModel().getInfo(location)
+                getViewModel().getInfo(location.latitude.toString(), location.longitude.toString())
 
             } else {
                 Log.d("LOCATION", "Location is null")

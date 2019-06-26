@@ -1,6 +1,5 @@
 package com.asp.weatherapp.features.temperature.repo
 
-import android.location.Location
 import com.asp.weatherapp.api.ApiInterface
 import com.asp.weatherapp.features.temperature.data.Info
 import com.asp.weatherapp.preferences.WeatherPreferences
@@ -21,8 +20,8 @@ class WeatherRepo(
     }
 
 
-    fun getInfo(location: Location): Single<Info> {
-        return api.getForecast(WEATHER_API_KEY,location.latitude.toString() + "," + location.longitude.toString(), "5")
+    fun getInfo(latitude: String, longitude: String): Single<Info> {
+        return api.getForecast(WEATHER_API_KEY, "$latitude,$longitude", "5")
             .subscribeOn(rxSchedulers.io())
             .observeOn(rxSchedulers.androidThread())
     }
