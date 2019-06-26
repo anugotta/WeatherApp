@@ -9,4 +9,5 @@
     <color name="white">#ffffff</color>
     <color name="bgErrorState">#E85959</color>
     <color name="bgBtn">#4A4A4A</color>
+    <color name="location_text">#556799</color>
 </resources>

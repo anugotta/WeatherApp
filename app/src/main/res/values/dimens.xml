@@ -8,4 +8,11 @@
     <dimen name="margin_112">112dp</dimen>
     <dimen name="text_54">54sp</dimen>
     <dimen name="text_18">18sp</dimen>
+    <dimen name="margin_56">56dp</dimen>
+    <dimen name="text_36">36sp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_15">15dp</dimen>
+    <dimen name="margin_62">62dp</dimen>
+    <dimen name="margin_44">44dp</dimen>
+    <dimen name="margin_1">1dp</dimen>
 </resources>
